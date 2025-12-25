@@ -1,0 +1,60 @@
+# Déclaration des sources (tables STAGING dans Snowflake)
+# Fichier : models/staging/_staging__sources.yml
+
+version: 2
+
+sources:
+  - name: staging
+    database: shopstream_dwh
+    schema: staging
+    description: "Tables de staging chargées depuis S3"
+    
+    tables:
+      - name: stg_users
+        description: "Utilisateurs de la plateforme"
+        columns:
+          - name: id
+            description: "Identifiant unique de l'utilisateur"
+            tests:
+              - unique
+              - not_null
+          - name: email
+            description: "Email de l'utilisateur"
+            tests:
+              - unique
+              - not_null
+              
+      - name: stg_products
+        description: "Catalogue de produits"
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+              
+      - name: stg_orders
+        description: "Commandes"
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: user_id
+            tests:
+              - not_null
+              - relationships:
+                  to: source('staging', 'stg_users')
+                  field: id
+                  
+      - name: stg_order_items
+        description: "Lignes de commande"
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: order_id
+            tests:
+              - relationships:
+                  to: source('staging', 'stg_orders')
+                  field: id

@@ -1,0 +1,53 @@
+
+# Configuration du projet dbt ShopStream
+# Fichier : dbt_project.yml
+
+name: 'shopstream_dbt'
+version: '1.0.0'
+config-version: 2
+
+# Profil à utiliser (référence profiles.yml)
+profile: 'shopstream_dbt'
+
+# Dossiers du projet
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configuration des modèles
+models:
+  shopstream_dbt:
+    # Configuration par défaut
+    +materialized: view
+    
+    # Modèles de staging
+    staging:
+      +materialized: view
+      +schema: staging
+      
+    # Modèles Core (dimensions + faits)
+    core:
+      +materialized: table
+      +schema: core
+      dimensions:
+        +materialized: table
+      facts:
+        +materialized: table
+      
+    # Data Marts (tables finales)
+    marts:
+      +materialized: table
+      +schema: marts
+
+# Variables globales
+vars:
+  start_date: '2022-01-01'
+  premium_plans: ['premium', 'enterprise']

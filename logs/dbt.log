@@ -1,0 +1,147 @@
+[0m12:44:01.209701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178578F06E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017858763ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017858763B10>]}
+
+
+============================== 12:44:01.212677 | 02f7fcf0-470b-4943-ab0f-f62113af0117 ==============================
+[0m12:44:01.212677 [info ] [MainThread]: Running with dbt=1.11.0-rc3
+[0m12:44:01.213270 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\fftt7\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init shopstream_dbt', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m12:44:01.224815 [debug] [MainThread]: Starter project path: C:\Python313\Lib\site-packages\dbt\include\starter_project
+[0m12:44:01.231878 [info ] [MainThread]: 
+Your new dbt project "shopstream_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:44:01.232244 [info ] [MainThread]: Setting up your profile.
+[0m12:44:19.966968 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m12:44:19.967298 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m12:44:19.967508 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m12:51:54.557154 [error] [MainThread]: Encountered an error:
+
+[0m12:51:54.559884 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Python313\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python313\Lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+  File "C:\Python313\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Python313\Lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ~~~~~~~~~~~~^
+        text, default=default, hide_input=hide_input, type=type
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Python313\Lib\site-packages\click\termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+  File "C:\Python313\Lib\site-packages\click\termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m12:51:54.561964 [debug] [MainThread]: Command `dbt init` failed at 12:51:54.561702 after 473.47 seconds
+[0m12:51:54.562342 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017804B97A80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000178031FB650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017804B83460>]}
+[0m12:51:54.562688 [debug] [MainThread]: Flushing usage events
+[0m12:53:05.530344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1DB2B06E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1DC123ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1DC123B10>]}
+
+
+============================== 12:53:05.533663 | 1b17522b-47ed-4527-bc0d-40a07e294dc5 ==============================
+[0m12:53:05.533663 [info ] [MainThread]: Running with dbt=1.11.0-rc3
+[0m12:53:05.534255 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\fftt7\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init shopstream_dbt', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m12:53:05.545378 [debug] [MainThread]: Starter project path: C:\Python313\Lib\site-packages\dbt\include\starter_project
+[0m12:53:05.552737 [info ] [MainThread]: 
+Your new dbt project "shopstream_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:53:05.553137 [info ] [MainThread]: Setting up your profile.
+[0m12:53:29.629045 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m12:53:29.629391 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m12:53:29.629620 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m12:56:35.232258 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002378A8CC6E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002378B743ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002378B743B10>]}
+
+
+============================== 12:56:35.235528 | 749e5227-a387-4c4a-9ddc-b52095d38032 ==============================
+[0m12:56:35.235528 [info ] [MainThread]: Running with dbt=1.11.0-rc3
+[0m12:56:35.236051 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\fftt7\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt init shopstream_dbt', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m12:56:35.248435 [debug] [MainThread]: Starter project path: C:\Python313\Lib\site-packages\dbt\include\starter_project
+[0m12:56:35.255733 [info ] [MainThread]: 
+Your new dbt project "shopstream_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:56:35.256217 [info ] [MainThread]: Setting up your profile.
+[0m12:56:38.131199 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m12:56:38.131521 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m12:56:38.131711 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m12:57:04.005668 [info ] [MainThread]: Profile shopstream_dbt written to C:\Users\fftt7\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m12:57:04.007320 [debug] [MainThread]: Command `dbt init` succeeded at 12:57:04.007198 after 28.90 seconds
+[0m12:57:04.007619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000237B79A7CE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002378A30B770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000237B7993350>]}
+[0m12:57:04.007905 [debug] [MainThread]: Flushing usage events
+[0m12:57:04.910337 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:02:39.434922 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000218D90306E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000218D9EA3ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000218D9EA3B10>]}
+
+
+============================== 13:02:39.438175 | bb8c8a31-fbdf-4263-9df6-cdf04560d234 ==============================
+[0m13:02:39.438175 [info ] [MainThread]: Running with dbt=1.11.0-rc3
+[0m13:02:39.438754 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\fftt7\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init shopstream_dbt', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m13:02:39.450540 [debug] [MainThread]: Starter project path: C:\Python313\Lib\site-packages\dbt\include\starter_project
+[0m13:02:39.458414 [info ] [MainThread]: 
+Your new dbt project "shopstream_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:02:39.458955 [info ] [MainThread]: Setting up your profile.
